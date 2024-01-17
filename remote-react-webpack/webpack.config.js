@@ -3,28 +3,18 @@ const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
   entry: "./src/index",
-  entry: {
-    app: {
-      import: "./src/index",
-    },
-  },
   cache: false,
-
   mode: "development",
   devtool: "source-map",
-
   optimization: {
     minimize: false,
   },
-
   output: {
     publicPath: "auto",
   },
-
   resolve: {
     extensions: [".jsx", ".js", ".json", ".mjs"],
   },
-
   module: {
     rules: [
       {
@@ -44,15 +34,19 @@ module.exports = {
       },
     ],
   },
-
   plugins: [
     new ModuleFederationPlugin({
       name: "remoteReactWebpack",
       filename: "remoteEntry.js",
       exposes: {
-        "./react": "react",
-        "./react-dom": "react-dom",
+        "./Button": "./src/components/Button/index.js",
         "./Nav": "./src/components/Nav.js",
+      },
+      shared: {
+        react: { eager: true, singleton: true },
+        "react-dom": { eager: true, singleton: true },
+        "@emotion/css": { eager: true, singleton: true },
+        "@emotion/styled": { eager: true, singleton: true },
       },
     }),
     new HtmlWebpackPlugin({
