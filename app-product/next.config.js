@@ -2,13 +2,6 @@ const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 
 const CONTAINER_URL = process.env.CONTAINER_URL || "http://localhost:3000";
 
-const remotes = (isServer) => {
-  const location = isServer ? "ssr" : "chunks";
-  return {
-    container: `container@${CONTAINER_URL}/_next/static/${location}/remoteEntry.js`,
-  };
-};
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -22,7 +15,7 @@ const nextConfig = {
       new NextFederationPlugin({
         name: "product",
         filename: "static/chunks/remoteEntry.js",
-        remotes: remotes(isServer),
+        remotes: {},
         exposes: {
           "./ProductCard": "./src/components/ProductCard/index.ts",
         },
