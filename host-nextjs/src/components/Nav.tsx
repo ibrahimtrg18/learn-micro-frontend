@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-// Import a microfrontend component from app-product
+// Import a microfrontend component from remoteReact
 const Nav = dynamic(() => import("remoteReact/Nav"), {
   ssr: false,
 });

@@ -1,5 +1,5 @@
-// declare module for components expose from app-product
-declare module "product/ProductCard" {
+// declare module for components expose from remoteNext
+declare module "remoteNext/ProductCard" {
   type ProductCardProps = {
     title: string;
     description: string;

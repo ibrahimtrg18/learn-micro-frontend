@@ -1,4 +1,4 @@
-// declare module for components expose from app-product
+// declare module for components expose from remoteReact
 declare module "remoteReact/Nav" {
   type NavProps = {};
 

@@ -1,7 +1,5 @@
 const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 
-const CONTAINER_URL = process.env.CONTAINER_URL || "http://localhost:3000";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,10 +8,10 @@ const nextConfig = {
    * @param {import('webpack').Configuration} config
    * @returns {import('webpack').Configuration}
    */
-  webpack(config, { isServer }) {
+  webpack(config) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: "product",
+        name: "remoteNext",
         filename: "static/chunks/remoteEntry.js",
         remotes: {},
         exposes: {
