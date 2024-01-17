@@ -3,9 +3,7 @@ import * as ButtonStyles from "./Button.styles";
 
 const Button = () => {
   return (
-    <ButtonStyles.Button>
-      remote-react-webpack from localhost:8081
-    </ButtonStyles.Button>
+    <ButtonStyles.Button>remote-react from localhost:8081</ButtonStyles.Button>
   );
 };
 

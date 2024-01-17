@@ -1,5 +1,5 @@
 // declare module for components expose from app-product
-declare module "remoteReactWebpack/Nav" {
+declare module "remoteReact/Nav" {
   type NavProps = {};
 
   const Nav: React.ComponentType<NavProps>;
@@ -7,7 +7,7 @@ declare module "remoteReactWebpack/Nav" {
   export default Nav;
 }
 
-declare module "remoteReactWebpack/Button" {
+declare module "remoteReact/Button" {
   type ButtonProps = {};
 
   const Button: React.ComponentType<ButtonProps>;

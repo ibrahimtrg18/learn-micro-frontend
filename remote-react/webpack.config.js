@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "remoteReactWebpack",
+      name: "remoteReact",
       filename: "remoteEntry.js",
       exposes: {
         "./Button": "./src/components/Button/index.js",

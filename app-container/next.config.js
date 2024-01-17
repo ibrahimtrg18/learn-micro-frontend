@@ -8,7 +8,7 @@ const remotes = (isServer) => {
   const location = isServer ? "ssr" : "chunks";
   return {
     product: `product@${APP_PRODUCT_URL}/_next/static/${location}/remoteEntry.js`,
-    remoteReactWebpack: `remoteReactWebpack@${APP_REMOTE_REACT_WEBPACK}/remoteEntry.js`,
+    remoteReact: `remoteReact@${APP_REMOTE_REACT_WEBPACK}/remoteEntry.js`,
   };
 };
 
