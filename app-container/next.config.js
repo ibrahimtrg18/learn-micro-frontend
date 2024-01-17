@@ -1,11 +1,14 @@
 const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 
-const PRODUCT_URL = process.env.PRODUCT_URL || "http://localhost:3001";
+const APP_PRODUCT_URL = process.env.APP_PRODUCT_URL || "http://localhost:3001";
+const APP_REMOTE_REACT_WEBPACK =
+  process.env.APP_REMOTE_REACT_WEBPACK || "http://localhost:3002";
 
 const remotes = (isServer) => {
   const location = isServer ? "ssr" : "chunks";
   return {
-    product: `product@${PRODUCT_URL}/_next/static/${location}/remoteEntry.js`,
+    product: `product@${APP_PRODUCT_URL}/_next/static/${location}/remoteEntry.js`,
+    remoteReactWebpack: `remoteReactWebpack@${APP_REMOTE_REACT_WEBPACK}/remoteEntry.js`,
   };
 };
 
