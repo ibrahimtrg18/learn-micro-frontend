@@ -23,7 +23,7 @@ const nextConfig = {
   webpack(config, { isServer }) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: "container",
+        name: "host",
         filename: "static/chunks/remoteEntry.js",
         remotes: remotes(isServer),
         exposes: {},
