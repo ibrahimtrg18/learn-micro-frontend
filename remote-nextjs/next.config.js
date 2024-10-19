@@ -11,11 +11,11 @@ const nextConfig = {
   webpack(config) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: "remoteNext",
+        name: "remote_next",
         filename: "static/chunks/remoteEntry.js",
         remotes: {},
         exposes: {
-          "./ProductCard": "./src/components/ProductCard/index.ts",
+          "./Banner": "./src/components/Banner",
         },
         shared: {},
       })

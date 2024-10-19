@@ -8,8 +8,8 @@ const APP_REMOTE_REACT =
 const remotes = (isServer) => {
   const location = isServer ? "ssr" : "chunks";
   return {
-    remoteNext: `remoteNext@${APP_REMOTE_NEXTJS}/_next/static/${location}/remoteEntry.js`,
-    remoteReact: `remoteReact@${APP_REMOTE_REACT}/remoteEntry.js`,
+    remote_next: `remote_next@${APP_REMOTE_NEXTJS}/_next/static/${location}/remoteEntry.js`,
+    remote_react: `remote_react@${APP_REMOTE_REACT}/remoteEntry.js`,
   };
 };
 
@@ -27,7 +27,9 @@ const nextConfig = {
         name: "host",
         filename: "static/chunks/remoteEntry.js",
         remotes: remotes(isServer),
-        exposes: {},
+        exposes: {
+          Banner: "./src/components/Banner",
+        },
         shared: {},
       })
     );

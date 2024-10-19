@@ -1,5 +1,5 @@
 {
-  "name": "remote-react",
+  "name": "remote_react",
   "version": "0.1.0",
   "private": true,
   "author": {
@@ -19,7 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run watch\" \"npm run serve\"",
+    "start": "npm run build && npm run serve",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\"",
     "watch": "webpack --watch",
     "build": "webpack --mode production",
     "serve": "serve dist -p 3002",

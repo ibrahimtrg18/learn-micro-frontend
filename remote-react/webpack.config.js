@@ -36,9 +36,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "remoteReact",
+      name: "remote_react",
       filename: "remoteEntry.js",
       exposes: {
+        "./Banner": "./src/components/Banner",
         "./Button": "./src/components/Button/index.js",
         "./Nav": "./src/components/Nav.js",
       },

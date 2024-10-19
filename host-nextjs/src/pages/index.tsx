@@ -1,19 +1,14 @@
-import ProductCard from "@/components/ProductCard";
-import Nav from "@/components/Nav";
-import Button from "@/components/Button";
+import { Banner as RemoteNextBanner } from "@/components/remotes/remote_next";
+import { Banner as RemoteReactBanner } from "@/components/remotes/remote_react";
 
 export default function Home() {
   return (
     <div>
       Host Next
-      <button>Helloooooo!</button>
       <hr />
-      Remote Nextjs
-      <ProductCard title="test" price={4000} description="description" />
+      <RemoteNextBanner />
       <hr />
-      Remote React
-      <Nav />
-      <Button />
+      <RemoteReactBanner />
     </div>
   );
 }

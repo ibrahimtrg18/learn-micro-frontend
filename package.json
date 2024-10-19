@@ -9,10 +9,10 @@
     "name": "Ibrahim Tarigan"
   },
   "scripts": {
-    "start-all:dev": "concurrently \"npm run start:host-nextjs\" \"npm run start:remote-nextjs\" \"npm run start:remote-react\"",
+    "start-all:dev": "concurrently \"npm run start:host-nextjs\" \"npm run start:remote_nextjs\" \"npm run start:remote_react\"",
     "start:host-nextjs": "cd host-nextjs && npm run dev",
-    "start:remote-nextjs": "cd remote-nextjs && npm run dev",
-    "start:remote-react": "cd remote-react && npm start"
+    "start:remote_nextjs": "cd remote-nextjs && npm run dev",
+    "start:remote_react": "cd remote-react && npm start"
   },
   "keywords": [
     "frontend",
